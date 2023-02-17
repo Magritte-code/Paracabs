@@ -133,5 +133,30 @@ namespace paracabs
                 accel inline void print () const {printf ("%le, %le, %le\n", x(), y(), z());}
         };
 
+        
+        ///  scalar multiplication
+        //////////////////////////
+        template <typename type>
+        accel inline Vector3D<type> operator* (const Vector3D<type>& vec, const type& scalar)
+        {
+            const type x = vec.data[0] * scalar;
+            const type y = vec.data[1] * scalar;
+            const type z = vec.data[2] * scalar;
+
+            return Vector3D<type>(x, y, z);
+        }
+
+        ///  scalar multiplication
+        //////////////////////////
+        template <typename type>
+        accel inline Vector3D<type> operator* (const type& scalar, const Vector3D<type>& vec)
+        {
+            const type x = vec.data[0] * scalar;
+            const type y = vec.data[1] * scalar;
+            const type z = vec.data[2] * scalar;
+
+            return Vector3D<type>(x, y, z);
+        }
+        
     }
 }
