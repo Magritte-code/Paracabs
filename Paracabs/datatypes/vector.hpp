@@ -158,6 +158,22 @@ namespace paracabs
                 return vec.size();
             }
 
+            ///  Getter for the minimum value
+            /////////////////////////////////
+            inline type min () const
+            {
+                auto min = std::min_element (vec.begin(), vec.end());
+                return *min;
+            }
+
+            ///  Getter for the maximum value
+            /////////////////////////////////
+            inline type max () const
+            {
+                auto max = std::max_element (vec.begin(), vec.end());
+                return max;
+            }
+
             ///  Access operators
             accel inline type  operator[] (const size_t id) const {return dat[id];}
             accel inline type &operator[] (const size_t id)       {return dat[id];}
